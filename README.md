@@ -24,8 +24,6 @@ import fs from "node:fs";
 
 const data = JSON.parse(fs.readFileSync("list.json", "utf-8"));
 
-// BIN: 6 veya 8 hane (ör: 979286 veya 97928700)
-// Veri aralığı: CardRangeStart / CardRangeEnd (PAN aralığı)
 function findByBin(binStr) {
   const rangeDigits = String(data[0].CardRangeStart).length;
   const pow = rangeDigits - binStr.length;
